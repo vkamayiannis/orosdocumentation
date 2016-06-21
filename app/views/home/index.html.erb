@@ -1,11 +1,23 @@
-<table>
-  <th>Project</th>
-  <th>Customer</th>
-  <th>URL</th>
-  <% @libraries.each do |library| %>
-    <tr/>
-    <td><%= library[:name] %></td>
-    <td><%= library[:customer] %></td>
-    <td><%= link_to library[:url], library[:url], :target => "_blank"%></td>
-  <% end %>
-</table>
+<div class="row-fluid">
+    <div class="span8 offset1">
+		<input type="text" class="form-control project-search" placeholder="Find a project" />
+	</div>
+</div>
+<br/>
+<div class="row-fluid">
+    <div class="span8 offset1">
+		<div class = "projects-list">
+			<table class="table">
+			  <th>Project</th>
+			  <th>Customer</th>
+			  <th>URL</th>
+			  <% @libraries.each do |library| %>
+			    <tr/>
+			    <td><%= library[:name] %></td>
+			    <td><%= library[:customer] %></td>
+			    <td><%= link_to library[:url], library[:url], :target => "_blank"%></td>
+			  <% end %>
+			</table>
+		</div>
+	</div>
+</div>
