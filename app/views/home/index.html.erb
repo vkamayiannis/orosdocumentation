@@ -1,0 +1,11 @@
+<table>
+  <th>Project</th>
+  <th>Customer</th>
+  <th>URL</th>
+  <% @libraries.each do |library| %>
+    <tr/>
+    <td><%= library[:name] %></td>
+    <td><%= library[:customer] %></td>
+    <td><%= link_to library[:url], library[:url], :target => "_blank"%></td>
+  <% end %>
+</table>
