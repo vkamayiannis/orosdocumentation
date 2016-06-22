@@ -53,5 +53,11 @@ class HomeController < ApplicationController
       customer: "Makios S.A.",
       url: ""
     }
+
+    libraries << {
+      name: "ImportXML.dll",
+      customer: "Olympos S.A.",
+      url: "/docs/Olympos_XML/html/Olympos_XML.htm"
+    }
   end
 end
