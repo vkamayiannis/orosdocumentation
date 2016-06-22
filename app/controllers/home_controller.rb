@@ -9,19 +9,19 @@ class HomeController < ApplicationController
     libraries << {
       name: "AlumilERP.dll",
       customer: "Alumil Greece",
-      url: "http://www.google.com"
+      url: ""
     }
 
     libraries << {
       name: "DCManage",
       customer: "Orosimo software",
-      url: "http://www.in.gr"
+      url: ""
     }
 
     libraries << {
       name: "Elgeka.dll",
       customer: "Elgeka - Ferfelis Romania",
-      url: "http://www.elgeka.com"
+      url: ""
     }
   end
 end

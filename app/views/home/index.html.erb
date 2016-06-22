@@ -1,23 +1,79 @@
-<div class="row-fluid">
-    <div class="span8 offset1">
-		<input type="text" class="form-control project-search" placeholder="Find a project" />
-	</div>
-</div>
-<br/>
-<div class="row-fluid">
-    <div class="span8 offset1">
-		<div class = "projects-list">
-			<table class="table">
-			  <th>Project</th>
-			  <th>Customer</th>
-			  <th>URL</th>
-			  <% @libraries.each do |library| %>
-			    <tr/>
-			    <td><%= library[:name] %></td>
-			    <td><%= library[:customer] %></td>
-			    <td><%= link_to library[:url], library[:url], :target => "_blank"%></td>
-			  <% end %>
-			</table>
-		</div>
-	</div>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Projects
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <div class="row-fluid">
+            <div class="span8 offset1">
+        		<input type="text" class="form-control project-search" placeholder="Find a project" />
+        	</div>
+        </div>
+        <br/>
+        <div class="row-fluid">
+            <div class="span8 offset1">
+          		<div class = "projects-list">
+          			<table class="table">
+          			  <th>Project</th>
+          			  <th>Customer</th>
+          			  <th>URL</th>
+          			  <% @libraries.each do |library| %>
+          			    <tr/>
+          			    <td><%= library[:name] %></td>
+          			    <td><%= library[:customer] %></td>
+          			    <td>
+                      <% if library[:url].empty? %>
+                        No url provided
+                      <% else %>
+                       <%= link_to library[:url], library[:url], :target => "_blank"%>
+                      <% end %>
+                     </td>
+          			  <% end %>
+          			</table>
+          		</div>
+          	</div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Javadoc syntax
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <p>The following is a sample javadoc that is inserted before a procedure or a function
+          <pre>
+            <code>
+{*------------------------------------------------------------------------------
+  Credit control check for credit days. The function finds the oldest unpaid
+  invoice, and checks if this date with the grace days and limit days exceed the
+  documents date. If yes, it flags the order as not passed
+  @return Returns true or false if the order passes credit days check
+-------------------------------------------------------------------------------}
+            </code>
+          </pre>
+        </p>
+        <p>List of supported tags
+          <pre>
+            <code>
+@author - Author of the procedure
+@param - Description of each parameter
+@return - Description of the return value
+            </code>
+          </pre>
+        </p>
+        <p>For more information see <a href = "http://dephicodetodoc.sourceforge.net/JavaDoc_Syntax.htm", target="_blank">DelphiCodeToDoc Javadoc syntax</a></p>
+      </div>
+    </div>
+  </div>
 </div>
