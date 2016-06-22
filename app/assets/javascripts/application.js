@@ -27,7 +27,7 @@ $(function() {
 		// Only search for strings 2 characters or more
 		if (search.val().length >= 2) {
 			// Use the highlight plugin
-			content.highlight(search.val(), function(found) {                
+			content.highlight(search.val(), function(found) {
                 found.parent().parent().css('background','yellow');
 			});
 		}
@@ -57,12 +57,12 @@ $(function() {
 		});
 	};
 	$.fn.highlightRestore = function() {
-		
+
 		return this.each(function() {
 			var elem = $(this);
 			elem.html(elem.data('highlight-original'));
 		});
-		
+
 	};
 
 	function walk(elem) {
@@ -77,4 +77,4 @@ $(function() {
 		});
 	}
 
-})(jQuery); 
+})(jQuery);
