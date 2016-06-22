@@ -21,7 +21,7 @@
           			<table class="table">
           			  <th>Project</th>
           			  <th>Customer</th>
-          			  <th>URL</th>
+          			  <th>Documentation</th>
           			  <% @libraries.each do |library| %>
           			    <tr/>
           			    <td><%= library[:name] %></td>
@@ -30,7 +30,7 @@
                       <% if library[:url].empty? %>
                         No url provided
                       <% else %>
-                       <%= link_to library[:url], library[:url], :target => "_blank"%>
+                       <%= link_to 'URL', library[:url], :target => "_blank"%>
                       <% end %>
                      </td>
           			  <% end %>
