@@ -51,17 +51,19 @@
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
-        <p>The following is a sample javadoc that is inserted before a procedure or a function
-          <pre>
-            <code>
-{*------------------------------------------------------------------------------
-  Credit control check for credit days. The function finds the oldest unpaid
-  invoice, and checks if this date with the grace days and limit days exceed the
-  documents date. If yes, it flags the order as not passed
-  @return Returns true or false if the order passes credit days check
--------------------------------------------------------------------------------}
-            </code>
-          </pre>
+        <p>The following is a sample javadoc that is inserted before a procedure or a function. It's a small description
+          about what the function does, and uses supported tags that are shown in the documentation
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">{*------------------------------------------------------------------------------</span>
+<span style="color: #888888">  Procedure to make ReadOnly the CusId field of the Master dataset</span>
+<span style="color: #888888">  @param RO States if the field will be ReadOnly</span>
+<span style="color: #888888">-------------------------------------------------------------------------------}</span>
+<span style="color: #008800; font-weight: bold">procedure</span> <span style="color: #BB0066; font-weight: bold">TInternationalPrAddDiscDM</span><span style="color: #333333">.</span><span style="color: #0066BB; font-weight: bold">MakeCusFieldRO</span>(RO<span style="color: #333333">:</span> <span style="color: #333399; font-weight: bold">Boolean</span>)<span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">begin</span>
+  Master<span style="color: #333333">.</span>FieldByName(<span style="background-color: #fff0f0">&#39;CUSID&#39;</span>)<span style="color: #333333">.</span>ReadOnly <span style="color: #333333">:=</span> RO<span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">end</span><span style="color: #333333">;</span>
+</pre></div>
+
+
         </p>
         <p>List of supported tags
           <pre>
