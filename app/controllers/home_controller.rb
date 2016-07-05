@@ -31,6 +31,12 @@ class HomeController < ApplicationController
     }
 
     libraries << {
+      name: "ImportXML.dll",
+      customer: "Olympos S.A.",
+      url: "/docs/Olympos_XML/html/Olympos_XML.htm"
+    }
+
+    libraries << {
       name: "Makios.dll",
       customer: "Makios S.A.",
       url: ""
@@ -54,10 +60,5 @@ class HomeController < ApplicationController
       url: ""
     }
 
-    libraries << {
-      name: "ImportXML.dll",
-      customer: "Olympos S.A.",
-      url: "/docs/Olympos_XML/html/Olympos_XML.htm"
-    }
   end
 end
